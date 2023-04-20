@@ -2,7 +2,7 @@ import { Container } from './style'
 import { ReactNode } from 'react'
 
 interface LinksProps {
-  nome: string
+  nome: string | undefined
   children: ReactNode
 }
 

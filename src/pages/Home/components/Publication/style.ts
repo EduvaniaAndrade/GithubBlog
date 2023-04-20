@@ -5,6 +5,7 @@ export const Container = styled.div`
   grid-template-columns: repeat(2, 1fr);
   margin-top: 3rem;
   gap: 2rem;
+  cursor: pointer;
 `
 
 export const Content = styled.div`
@@ -13,8 +14,9 @@ export const Content = styled.div`
   background-color: ${props => props.theme['blue-400']}; 
   border-radius: 10px;
   padding: 2rem;
+`
 
-  div {
+export const ContentTitle = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -38,29 +40,21 @@ export const Content = styled.div`
       line-height: 160%;
       color: ${props => props.theme['blue-100']};
     }
-  }
+`
 
-  p {
-    width: 22rem;
-    height: 7rem;
-    font-family: 'Nunito' sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1rem;
-    line-height: 120%;
-    color: ${props => props.theme['white-blue-300']};
-    overflow: hidden;
-    text-align: justify;
-    position: relative;
-    margin-right: -1rem;
-    padding-right: 1rem;
+export const BodyText = styled.div`
+  width: 22rem;
+  height: 8.5rem;
+  font-family: 'Nunito' sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 120%;
+  color: ${props => props.theme['white-blue-300']};
+  overflow: hidden;
+  text-align: justify;
 
-    &::before {
-      content: '...';
-      position: absolute;
-      right: 0;
-      bottom: -4px;
-      color: #AFC2D4;
-    }
+  strong{
+    font-weight: normal;
   }
 `

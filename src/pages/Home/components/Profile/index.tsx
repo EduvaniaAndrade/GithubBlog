@@ -1,34 +1,34 @@
 import { Container, Content, ContentLinks, UserNameContent } from './style'
-import userPhoto from '../../../../assets/avatar.svg'
 import { ArrowSquareOut } from 'phosphor-react'
 import { Links } from '../../../../components/Links'
 import { FaGithub, FaUsers, FaBuilding } from 'react-icons/fa'
+import { useContext } from 'react'
+import { GithubBlogContext } from '../../../../context/GithubBlogContext'
+import { Link } from 'react-router-dom'
 
 export function Profile() {
+  const { user } = useContext(GithubBlogContext)
+
   return (
     <Container>
-      <img src={userPhoto} alt="User Foto" />
+      <img src={user?.avatar_url} alt="User Foto" />
       <Content>
         <UserNameContent>
-          <h1>Ada Andrade</h1>
-          <a>
+          <h1>{user?.name}</h1>
+          <Link to={user.html_url}>
             Github <ArrowSquareOut />
-          </a>
+          </Link>
         </UserNameContent>
-        <p>
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
-        </p>
+        <p>{user?.bio}</p>
 
         <ContentLinks>
-          <Links nome="Ada Andrade">
+          <Links nome={user?.login}>
             <FaGithub />
           </Links>
-          <Links nome="Rocketseat">
+          <Links nome="Ada Andrade">
             <FaBuilding />
           </Links>
-          <Links nome="32 Seguidores">
+          <Links nome="_ Seguidores">
             <FaUsers />
           </Links>
         </ContentLinks>

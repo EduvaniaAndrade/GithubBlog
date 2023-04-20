@@ -47,4 +47,9 @@ export const LinksContent = styled.div`
       margin-left: 0.5rem;
     }
   }
+
+  a {
+    text-transform: uppercase;
+    color: ${props => props.theme['sky-blue']};
+  }
 `
